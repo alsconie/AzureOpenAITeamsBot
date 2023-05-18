@@ -1,0 +1,81 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.12/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.12",
+  "version": "1.0.0",
+  "id": "173b0cba-b71e-494a-bbe3-c82889ff3076",
+  "packageName": "TeamsChatBot.zip",
+  "developer": {
+    "name": "Xander Sconiers-Hasan",
+    "websiteUrl": "https://www.microsoft.com",
+    "privacyUrl": "https://www.microsoft.com/privacy",
+    "termsOfUseUrl": "https://www.microsoft.com/termsofuse"
+  },
+  "name": {
+    "short": "Eugene",
+    "full": "Eugene"
+  },
+  "description": {
+    "short": "Work Productivity Conversational bot",
+    "full": "Conversational AI helper using Azure OpenAI GPT-4 32K Model"
+  },
+  "icons": {
+    "outline": "outline.png",
+    "color": "color.png"
+  },
+  "accentColor": "#60A18E",
+  "staticTabs": [
+    {
+      "entityId": "com.contoso.helloworld.hellotab",
+      "name": "Hello Tab",
+      "contentUrl": "https://gpt4svc.azurewebsites.net/api/messages",
+      "scopes": [
+        "personal"
+      ]
+    }
+  ],
+  "configurableTabs": [
+    {
+      "configurationUrl": "https://app-hello-world-devcom.azurewebsites.net/configure",
+      "canUpdateConfiguration": false,
+      "scopes": [
+        "team"
+      ]
+    }
+  ],
+  "bots": [
+    {
+      "botId": "173b0cba-b71e-494a-bbe3-c82889ff3076",
+      "needsChannelSelector": false,
+      "isNotificationOnly": false,
+      "scopes": [
+        "team",
+        "personal",
+		"groupChat"
+      ]
+    }
+  ],
+  "composeExtensions": [
+    {
+      "botId": "9a5244f4-e9cd-46cc-b42e-9bf8da4d12ab",
+      "commands": [
+        {
+          "id": "getRandomText",
+          "description": "Gets some random text and images that you can insert in messages for fun.",
+          "title": "Get some random text for fun",
+          "initialRun": true,
+          "parameters": [
+            {
+              "name": "cardTitle",
+              "description": "Card title to use",
+              "title": "Card title"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "permissions": [],
+  "validDomains": [
+    "https://gptappsvc.azurewebsites.net"
+  ]
+}
